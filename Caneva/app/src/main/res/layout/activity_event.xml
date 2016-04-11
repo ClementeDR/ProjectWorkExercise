@@ -7,23 +7,38 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.clemente.caneva.List">
+    tools:context="com.example.clemente.caneva.Event">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="back"
-        android:id="@+id/backList"
+        android:id="@+id/backEvent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="104dp" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textViewList"
+        android:text="Informazioni"
+        android:id="@+id/TextEvent"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/TextEvent"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/info"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="61dp" />
 </RelativeLayout>

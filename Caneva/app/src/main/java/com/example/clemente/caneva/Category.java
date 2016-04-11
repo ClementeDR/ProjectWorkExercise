@@ -1,9 +1,9 @@
 package com.example.clemente.caneva;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class Category extends AppCompatActivity {
+public class Category extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
