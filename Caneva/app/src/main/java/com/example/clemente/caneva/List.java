@@ -1,6 +1,7 @@
 package com.example.clemente.caneva;
 
 import android.app.Activity;
+
 import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,8 @@ public class List extends Activity {
     private JSONObject jo;
     private JSONArray ja;
     ListView listView;
+
+
 
 
     @Override
@@ -161,6 +164,14 @@ public class List extends Activity {
                 startActivity(intent);
             }
         });
+
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
 
