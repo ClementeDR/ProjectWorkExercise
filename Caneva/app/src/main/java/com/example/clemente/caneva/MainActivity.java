@@ -54,17 +54,9 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            Button btn = (Button) findViewById(R.id.button);
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, List.class);
-                    startActivity(intent);
-                }
-            });
 
 
-            listView = (ListView) findViewById(R.id.listView);
+            listView = (ListView) findViewById(R.id.listViewMain);
             listView.setClickable(true);
 
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -200,6 +192,13 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
                     startActivity(intent);
                 }
             });
+            Button back = (Button) findViewById(R.id.backMain);
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
 
         }
 
@@ -329,5 +328,10 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
         protected void onDestroy() {
             super.onDestroy();
 
+        }
+
+        @Override
+        public void onBackPressed() {
+            super.onBackPressed();
         }
     }
