@@ -40,9 +40,6 @@ public class List extends Activity {
     private JSONArray ja;
     ListView listView;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
