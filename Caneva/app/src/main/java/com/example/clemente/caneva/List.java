@@ -7,7 +7,6 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -52,13 +51,13 @@ public class List extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        Button back = (Button) findViewById(R.id.backList);
+       /* Button back = (Button) findViewById(R.id.backList);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
-        });
+        });*/
 
         HttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(MainActivity.URL);
