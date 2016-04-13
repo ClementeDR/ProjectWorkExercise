@@ -37,8 +37,6 @@ import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import cz.msebera.android.httpclient.message.BasicNameValuePair;
     public class MainActivity extends Activity {
         protected static final String URL = "http://incaneva.it/wp-admin/admin-ajax.php";
-        public static final String OBJECT = "BUNDLE";
-        public static final String OFFSET = "offset";
         protected static final String ELEMENTO = "ELEMENTO";
         protected static final String ACTION = "incaneva_events";
         protected static final String BLOG = "1,6,7,8";
