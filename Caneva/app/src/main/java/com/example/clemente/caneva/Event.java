@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -57,7 +59,12 @@ public class Event extends Activity {
             e.printStackTrace();
         }
 
-        new DownloadImageTask((ImageView) findViewById(R.id.imageView)).execute(url);
+        //new DownloadImageTask((ImageView) findViewById(R.id.imageView)).execute(url);
+
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
+        Picasso.with(this).load(url).into(imageView);
+
 
 
         Button back = (Button) findViewById(R.id.backEvent);

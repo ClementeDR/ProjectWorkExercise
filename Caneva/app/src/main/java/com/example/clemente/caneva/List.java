@@ -1,11 +1,9 @@
 package com.example.clemente.caneva;
 
 import android.app.Activity;
-
 import android.content.Intent;
-import android.os.StrictMode;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -68,8 +66,8 @@ public class List extends Activity {
         HttpPost post = new HttpPost(MainActivity.URL);
 
         ArrayList<NameValuePair> lista = new ArrayList<>();
-        lista.add(new BasicNameValuePair("action", "incaneva_events"));
-        lista.add(new BasicNameValuePair("blog", "1,6,7,8"));
+        lista.add(new BasicNameValuePair("action", MainActivity.ACTION));
+        lista.add(new BasicNameValuePair("blog", MainActivity.BLOG));
         lista.add(new BasicNameValuePair("old", "false"));
 
         //lista.add(new BasicNameValuePair("limit", "10"));
