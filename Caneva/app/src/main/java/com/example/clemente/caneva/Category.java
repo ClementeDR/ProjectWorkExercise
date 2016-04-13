@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
@@ -180,6 +181,7 @@ public class Category extends Activity {
             } else {
                 listp.add("Problemi di connessione");
             }
+            Collections.reverse(listp);
             adapter = new ArrayAdapter<>(this, R.layout.row_event, listp);
             listEvento.setAdapter(adapter);
         } catch (JSONException e) {

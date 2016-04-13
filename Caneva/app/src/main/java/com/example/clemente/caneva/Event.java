@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,13 +65,13 @@ public class Event extends Activity {
 
 
 
-        Button back = (Button) findViewById(R.id.backEvent);
+       /* Button back = (Button) findViewById(R.id.backEvent);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
-        });
+        });*/
     }
 
     @Override

@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
@@ -132,9 +133,9 @@ public class List extends Activity {
                         String all = "";
                         try {
                             JSONObject temp = ja.getJSONObject(i);
-                            all += temp.getString("blogname").toString()+"/n"
-                                    + temp.getString("post_excerpt").toString()+"/n"
-                                    + temp.getString("evcal_start_date").toString()+"/n";
+                            all += temp.getString("blogname").toString()+"\n"
+                                    + temp.getString("post_excerpt").toString()+"\n"
+                                    + temp.getString("evcal_start_date").toString()+"\n";
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -146,6 +147,7 @@ public class List extends Activity {
             }else{
                 listL.add("Errori di connessione");
             }
+            Collections.reverse(listL);
             Adattatore = new ArrayAdapter<String>(this, R.layout.mylist, listL);
             listView.setAdapter(Adattatore);
 

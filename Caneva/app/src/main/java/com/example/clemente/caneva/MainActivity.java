@@ -23,8 +23,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
+import java.util.TimeZone;
 
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
@@ -120,12 +123,27 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
                                 JSONObject oneObject = jsonArray.getJSONObject(i);
                                 element += oneObject.getString("blogname").toString() + " " + "\n"
                                         + oneObject.getString("blogname_slug").toString() + " " + "\n"
-                                        + oneObject.getString("post_excerpt").toString() + " " + "\n"
-                                        +"Data inizio: " + oneObject.getString("evcal_start_date").toString() + " " + "\n";
+                                        + oneObject.getString("post_excerpt").toString() + " " + "\n";
+
+                                     /*   +"Data inizio: " + oneObject.getString("evcal_start_date").toString() + " " + "\n";
                                 if(oneObject.getString("evcal_end_date").length() == 0)
-                                    element += "Data fine: " + oneObject.getString("evcal_start_date").toString() + " " + "\n";
+                                    element += "Data fine: " + oneObject.getString("evcal_start_date").toString() + " " + oneObject.getString("evcal_start_date").toString() + "\n";
                                 else
-                                    element += "Data fine: " + oneObject.getString("evcal_end_date").toString() + " " + "\n";
+                                    element += "Data fine: " + oneObject.getString("evcal_end_date").toString() + " " + "\n";*/
+
+                                long unixSeconds = Long.parseLong(oneObject.getString("evcal_srow"));
+                                Date date = new Date(unixSeconds*1000L); // *1000 is to convert seconds to milliseconds
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy HH:mm:ss"); // the format of your date
+                                sdf.setTimeZone(TimeZone.getTimeZone("GMT+1")); // give a timezone reference for formating (see comment at the bottom
+                                element += "Data inizio: " + sdf.format(date)+ "\n";
+
+                                unixSeconds = Long.parseLong(oneObject.getString("evcal_erow"));
+                                date = new Date(unixSeconds * 1000L);
+                                sdf.setTimeZone(TimeZone.getTimeZone("GMT+1"));
+                                element += "Data fine: " + sdf.format(date);
+
+
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -194,13 +212,13 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
                     startActivity(intent);
                 }
             });
-            Button back = (Button) findViewById(R.id.backMain);
+            /*Button back = (Button) findViewById(R.id.backMain);
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     onBackPressed();
                 }
-            });
+            });*/
         }
 
 
